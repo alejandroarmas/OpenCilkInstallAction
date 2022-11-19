@@ -17,11 +17,11 @@ runs:
 
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
       name: Download OpenCilk
-      run: ./download-opencilk.sh
+      run: chmod +x ./download-opencilk.sh && ./download-opencilk.sh
       shell: bash
     - run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
       shell: bash
-      
+
     - run: ./setup-opencilk.sh
       shell: bash
     - run: /opt/opencilk/bin/clang++ --version
