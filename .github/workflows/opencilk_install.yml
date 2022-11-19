@@ -6,5 +6,5 @@ jobs:
   OpenCilkInstall:
     runs-on: ubuntu-latest
     steps:
-      name: 'Installation Script'
-      uses: ./
+      - name: 'Installation Script'
+        uses: ./
