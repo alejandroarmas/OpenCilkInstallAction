@@ -3,9 +3,8 @@ name: 'Install OpenCilk Compiler'
 on: [push]
 
 jobs:
-  build:
+  OpenCilkInstall:
     runs-on: ubuntu-latest
     steps:
       name: 'Installation Script'
       uses: ./
-      
