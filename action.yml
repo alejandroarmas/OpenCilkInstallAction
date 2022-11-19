@@ -24,5 +24,7 @@ runs:
 
     - run: ./setup-opencilk.sh
       shell: bash
+    - run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+      shell: bash
     - run: /opt/opencilk/bin/clang++ --version
       shell: bash
