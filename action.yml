@@ -4,6 +4,21 @@ author: 'Alejandro Armas'
 runs:
   using: 'composite'
   steps:
+
+    - name: Cache OpenCilk
+      id: opencilk-cache
+      uses: actions/cache@v3
+      env: 
+        cache-name: opencilk-installation-script
+      with:
+        path: ./
+        key: opencilk_install.sh
+        store-keys: opencilk_install.sh
+
+    - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
+      name: Download OpenCilk
+      run: ./download-opencilk.sh
+      shell: bash
     - run: ./setup-opencilk.sh
       shell: bash
     - run: /opt/opencilk/bin/clang++ --version
