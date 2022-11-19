@@ -13,7 +13,7 @@ runs:
       with:
         path: ./
         key: opencilk_install.sh
-        store-keys: opencilk_install.sh
+        restore-keys: opencilk_install.sh
 
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
       name: Download OpenCilk
