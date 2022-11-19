@@ -19,6 +19,7 @@ runs:
       name: Download OpenCilk
       run: ./download-opencilk.sh
       shell: bash
+    - run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
     - run: ./setup-opencilk.sh
       shell: bash
     - run: /opt/opencilk/bin/clang++ --version
