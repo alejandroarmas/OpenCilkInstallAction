@@ -11,9 +11,8 @@ runs:
       env: 
         cache-name: opencilk-installation-script
       with:
-        path: ./
-        key: opencilk_install.sh
-        restore-keys: opencilk_install.sh
+        path: opencilk_install.sh
+        key: ${{ runner.os}}-${{env.cache-name}}
 
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
       name: Download OpenCilk
