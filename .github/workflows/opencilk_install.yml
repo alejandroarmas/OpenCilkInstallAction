@@ -1,0 +1,11 @@
+name: 'Install OpenCilk Compiler'
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      name: 'Installation Script'
+      uses: ./
+      

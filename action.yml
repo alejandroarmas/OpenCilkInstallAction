@@ -1,0 +1,8 @@
+name: 'Install OpenCilk Compiler'
+author: 'Alejandro Armas'
+
+runs:
+  using: 'composite'
+  steps:
+    - run: ./setup-opencilk.sh
+      shell: bash
