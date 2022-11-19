@@ -9,5 +9,5 @@ rm ./opencilk_install.sh
 # sudo apt-get dist-upgrade
 # sudo apt-get install gcc-4.9
 # sudo apt-get install --only-upgrade libstdc++6-dev
-LD_LIBRARY_PATH=/opt/opencilk:$LD_LIBRARY_PATH
+# LD_LIBRARY_PATH=/opt/opencilk:$LD_LIBRARY_PATH
 
