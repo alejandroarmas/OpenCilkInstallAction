@@ -6,3 +6,5 @@ runs:
   steps:
     - run: ./setup-opencilk.sh
       shell: bash
+    - run: /opt/opencilk/bin/clang++ --version
+      shell: bash
