@@ -15,7 +15,7 @@ esac
 
 URL=${OPENCILK_DOWNLOAD_PREFIX}/${VERSION}/OpenCilk-2.0.0-${PLATFORM}-${OS}.sh
 
-curl -fsSL ${URL} -o opencilk_install.sh
+curl -fsSL ${URL} -o opencilk-install.sh
 
 if [[ $? != 0 ]]; then
     echo "Failed to download OpenCilk Shell Archive: ${URL}"

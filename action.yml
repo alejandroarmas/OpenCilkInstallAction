@@ -11,11 +11,11 @@ runs:
       env: 
         cache-name: opencilk-installation-script
       with:
-        path: opencilk_install.sh
+        path: opencilk-install.sh
         key: ${{ runner.os }}-${{runner.arch}}-${{env.cache-name}}
 
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
-      name: Download OpenCilk
+      name: Download OpenCilk Install Script
       run: chmod +x ./download-opencilk.sh && ./download-opencilk.sh
       shell: bash
     - run: ./setup-opencilk.sh
