@@ -1,6 +1,5 @@
 name: 'Install OpenCilk Compiler'
 author: 'Alejandro Armas'
-inputs: 
 
 runs:
   using: 'composite'
@@ -17,7 +16,8 @@ runs:
 
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
       name: Download OpenCilk Install Script
-      run: chmod +x ./download-opencilk.sh      
+      run: chmod +x ./download-opencilk.sh  
+      shell: bash    
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
       run: ./download-opencilk.sh v2.0 x86_64 opencilk-install.sh
       shell: bash
