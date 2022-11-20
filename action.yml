@@ -1,17 +1,18 @@
 name: 'Install OpenCilk Compiler'
 author: 'Alejandro Armas'
+env:
+  opencilk-install-script: opencilk-install.sh
 
 runs:
   using: 'composite'
   steps:
-
     - name: Cache OpenCilk
       id: opencilk-cache
       uses: actions/cache@v3
       env: 
         cache-name: opencilk-installation-script
       with:
-        path: opencilk-install.sh
+        path: ${{env.opencilk-install-script}}
         key: ${{ runner.os }}-${{runner.arch}}-${{env.cache-name}}
 
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
@@ -19,10 +20,10 @@ runs:
       run: chmod +x ./download-opencilk.sh  
       shell: bash    
     - if: ${{ steps.opencilk-cache.outputs.cache-hit != 'true'}}
-      run: ./download-opencilk.sh v2.0 x86_64 opencilk-install.sh
+      run: ./download-opencilk.sh v2.0 x86_64 ${{env.opencilk-install-script}}
       shell: bash
     - name: Install OpenCilk Compiler
-      run: ./setup-opencilk.sh
+      run: ./setup-opencilk.sh ${{env.opencilk-install-script}}
       shell: bash
     - name: Validate Installation
       run: /opt/opencilk/bin/clang++ --version

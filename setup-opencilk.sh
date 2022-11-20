@@ -1,3 +1,5 @@
 #!/bin/bash
+
+SCRIPT_NAME=$1
 mkdir /opt/opencilk
-sudo ./opencilk-install.sh --skip-license --prefix=/opt/opencilk --exclude-subdir
+sudo ./${SCRIPT_NAME} --skip-license --prefix=/opt/opencilk --exclude-subdir

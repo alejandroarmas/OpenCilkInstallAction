@@ -23,4 +23,4 @@ if [[ $? != 0 ]]; then
     exit 1
 fi
 
-chmod +x ${SCRIPT_NAME}
+chmod +x ./${SCRIPT_NAME}
