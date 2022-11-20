@@ -1,6 +1,8 @@
 name: 'Install OpenCilk Compiler'
 
 on: [push]
+env:
+  install-script-name: opencilk-install.sh
 
 jobs:
   OpenCilkInstall:
