@@ -21,3 +21,5 @@ if [[ $? != 0 ]]; then
     echo "Failed to download OpenCilk Shell Archive: ${URL}"
     exit 1
 fi
+
+chmod +x opencilk-install.sh

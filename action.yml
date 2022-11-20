@@ -18,7 +18,9 @@ runs:
       name: Download OpenCilk Install Script
       run: chmod +x ./download-opencilk.sh && ./download-opencilk.sh
       shell: bash
-    - run: ./setup-opencilk.sh
+    - name: Install OpenCilk Compiler
+      run: ./setup-opencilk.sh
       shell: bash
-    - run: /opt/opencilk/bin/clang++ --version
+    - name: Validate Installation
+      run: /opt/opencilk/bin/clang++ --version
       shell: bash
